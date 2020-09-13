@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "${BASH_SOURCE}")";
+# cd ~;
 
-git pull origin master;
+# git pull origin master;
 
 BREW_PREFIX=$(brew --prefix)
 
@@ -21,13 +21,13 @@ function doIt() {
     # Install apps/utilities from Homebrew
     brew bundle;
     # Set Homebrew-installed Bash as default
-    if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
-        echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
-        chsh -s "${BREW_PREFIX}/bin/bash";
-    fi;
+    # if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+    #     echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
+    #     chsh -s "${BREW_PREFIX}/bin/bash";
+    # fi;
 
-    source ~/.bash_profile;
-    ./.macos;
+    # source ~/.bash_profile;
+    # ./.macos;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
